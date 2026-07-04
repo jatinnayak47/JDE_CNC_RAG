@@ -1,0 +1,23 @@
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+.venv/
+
+# Uploaded documents
+data/uploads/
+
+# Registry file (optional)
+data/registry.json
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log

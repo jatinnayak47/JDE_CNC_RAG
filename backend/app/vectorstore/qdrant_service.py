@@ -82,9 +82,7 @@ class QdrantService:
 
             point = PointStruct(
                 id=chunk["chunk_id"],
-
                 vector=chunk["embedding"],
-
                 payload={
                     "chunk_id": chunk["chunk_id"],
                     "document_id": chunk["document_id"],
@@ -112,6 +110,7 @@ class QdrantService:
     ):
         """
         Performs semantic vector search.
+        Compatible with qdrant-client 1.18.0
         """
 
         if top_k < 1:
@@ -122,13 +121,22 @@ class QdrantService:
 
         client = cls.get_client()
 
-        results = client.search(
+        # Debug: verify collection contains data
+        count = client.count(
+            collection_name=settings.COLLECTION_NAME
+        )
+
+        print(
+            f"Total vectors in collection: {count.count}"
+        )
+
+        results = client.query_points(
             collection_name=settings.COLLECTION_NAME,
-            query_vector=query_embedding,
+            query=query_embedding,
             limit=top_k
         )
 
-        return results
+        return results.points
 
     @classmethod
     def count_points(cls):

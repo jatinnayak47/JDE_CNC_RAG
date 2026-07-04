@@ -1,0 +1,3 @@
+JAS Server is a Java Application Server.
+AIS Server exposes REST APIs.
+Enterprise Server executes business functions.

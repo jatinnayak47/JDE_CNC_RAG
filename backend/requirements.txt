@@ -23,3 +23,5 @@ pandas
 tqdm
 
 ollama
+llama-index
+requests

@@ -15,7 +15,9 @@ REGISTRY_FILE = "data/registry.json"
 ALLOWED_EXTENSIONS = {
     ".pdf",
     ".docx",
-    ".txt"
+    ".txt",
+    ".xlsx",
+    ".xls"
 }
 
 

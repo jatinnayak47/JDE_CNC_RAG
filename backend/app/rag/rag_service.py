@@ -10,6 +10,10 @@ from app.llm.llm_factory import (
     LLMFactory
 )
 
+from app.chat.chat_service import (
+    ChatService
+)
+
 
 class RAGService:
 
@@ -42,17 +46,26 @@ class RAGService:
             context_chunks
         )
 
+        conversation_context = (
+            ChatService.get_context()
+        )
+
         prompt = f"""
-You are a JD Edwards CNC assistant.
+You are an expert JD Edwards CNC consultant.
 
-Rules:
+Instructions:
 1. Use ONLY the provided context.
-2. Do not make up information.
-3. If the answer is not found in the context, respond:
+2. Use conversation history when resolving references.
+3. Do not make up information.
+4. If the answer is not found in the context, respond:
    "I could not find the answer in the provided documents."
-4. Keep the answer concise.
+5. Focus on JD Edwards EnterpriseOne and CNC concepts.
+6. Keep the answer concise but complete.
 
-Context:
+Conversation History:
+{conversation_context}
+
+Retrieved Context:
 {context}
 
 Question:
@@ -69,8 +82,33 @@ Answer:
             prompt
         )
 
+        ChatService.add_message(
+            question=question,
+            answer=answer
+        )
+
+        source_details = []
+
+        for result in results:
+
+            source_details.append(
+                {
+                    "document_id":
+                        result.payload.get(
+                            "document_id"
+                        ),
+                    "chunk_index":
+                        result.payload.get(
+                            "chunk_index"
+                        ),
+                    "score":
+                        result.score
+                }
+            )
+
         return {
             "question": question,
             "answer": answer,
-            "sources": len(results)
+            "source_count": len(results),
+            "sources": source_details
         }

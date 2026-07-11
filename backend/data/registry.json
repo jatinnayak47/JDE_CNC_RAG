@@ -1,34 +1,18 @@
 {
-    "19cecb6c-3bfd-4ad1-8ce4-159b31e91f2a": {
-        "document_id": "19cecb6c-3bfd-4ad1-8ce4-159b31e91f2a",
-        "filename": "sample.txt",
-        "file_type": ".txt",
-        "path": "data/uploads\\19cecb6c-3bfd-4ad1-8ce4-159b31e91f2a_sample.txt",
-        "file_size": 119,
-        "uploaded_at": "2026-06-24T19:48:03.874425+00:00"
-    },
-    "a3ebf663-95f7-4368-9686-1edcddf0de57": {
-        "document_id": "a3ebf663-95f7-4368-9686-1edcddf0de57",
+    "e430c20c-719a-40e2-a716-6861650c8b9d": {
+        "document_id": "e430c20c-719a-40e2-a716-6861650c8b9d",
         "filename": "Service Agreement.pdf",
         "file_type": ".pdf",
-        "path": "data/uploads\\a3ebf663-95f7-4368-9686-1edcddf0de57_Service Agreement.pdf",
+        "path": "data/uploads\\e430c20c-719a-40e2-a716-6861650c8b9d_Service Agreement.pdf",
         "file_size": 122622,
-        "uploaded_at": "2026-07-04T12:32:08.897783+00:00"
+        "uploaded_at": "2026-07-05T16:35:13.686014+00:00"
     },
-    "b6438aa1-ce11-4c68-a10f-64f9aa51fe2d": {
-        "document_id": "b6438aa1-ce11-4c68-a10f-64f9aa51fe2d",
-        "filename": "Resume_JatinNayak.pdf",
-        "file_type": ".pdf",
-        "path": "data/uploads\\b6438aa1-ce11-4c68-a10f-64f9aa51fe2d_Resume_JatinNayak.pdf",
-        "file_size": 81112,
-        "uploaded_at": "2026-07-04T12:33:25.593214+00:00"
-    },
-    "66220666-5614-4e08-91a5-d3695541f406": {
-        "document_id": "66220666-5614-4e08-91a5-d3695541f406",
-        "filename": "Service Agreement.pdf",
-        "file_type": ".pdf",
-        "path": "data/uploads\\66220666-5614-4e08-91a5-d3695541f406_Service Agreement.pdf",
-        "file_size": 122622,
-        "uploaded_at": "2026-07-04T14:13:26.824419+00:00"
+    "b25073f6-286f-4afb-a7c7-0cb5a3e8f0b3": {
+        "document_id": "b25073f6-286f-4afb-a7c7-0cb5a3e8f0b3",
+        "filename": "NIC  Hospitals List..XLSX",
+        "file_type": ".xlsx",
+        "path": "data/uploads\\b25073f6-286f-4afb-a7c7-0cb5a3e8f0b3_NIC  Hospitals List..XLSX",
+        "file_size": 536363,
+        "uploaded_at": "2026-07-05T16:43:25.267374+00:00"
     }
 }

@@ -20,11 +20,33 @@ from app.api.routes.rag_routes import (
     router as rag_router
 )
 
+from app.api.routes.chat_routes import (
+    router as chat_router
+)
+
+from app.api.routes.ticket_routes import (
+    router as ticket_router
+)
+
+from app.vectorstore.ticket_qdrant_service import (
+    TicketQdrantService
+)
 
 app = FastAPI(
     title="JDE CNC RAG",
     version="1.0.0"
 )
+
+
+@app.on_event("startup")
+async def startup_event():
+
+    print("Starting JDE CNC RAG...")
+
+    # Create ticket collection if it does not exist
+    TicketQdrantService.create_collection()
+
+    print("Ticket collection initialized")
 
 
 app.include_router(
@@ -55,6 +77,18 @@ app.include_router(
     rag_router,
     prefix="/api/v1/rag",
     tags=["RAG"]
+)
+
+app.include_router(
+    chat_router,
+    prefix="/api/v1/chat",
+    tags=["Chat"]
+)
+
+app.include_router(
+    ticket_router,
+    prefix="/api/v1/tickets",
+    tags=["Tickets"]
 )
 
 

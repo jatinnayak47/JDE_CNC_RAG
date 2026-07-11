@@ -27,7 +27,7 @@ class Settings(BaseSettings):
     # Embeddings
     # --------------------------------
     EMBEDDING_MODEL: str = (
-        "BAAI/bge-base-en-v1.5"
+        "sentence-transformers/all-MiniLM-L6-v2"
     )
 
     # --------------------------------
@@ -36,8 +36,14 @@ class Settings(BaseSettings):
     QDRANT_HOST: str = "localhost"
     QDRANT_PORT: int = 6333
 
+    # Existing document collection
     COLLECTION_NAME: str = (
         "jde_documents"
+    )
+
+    # New ticket collection
+    TICKET_COLLECTION_NAME: str = (
+        "jde_tickets"
     )
 
     # --------------------------------

@@ -55,6 +55,9 @@ class IngestionService:
             overlap=settings.CHUNK_OVERLAP
         )
 
+        print("Content Length:", len(content)) #Debugging line to print the length of the content
+        print("Chunk Count:", len(chunks)) #Debugging line to print the number of chunks generated
+
         return {
             "document_id": document_id,
             "filename": document_info[

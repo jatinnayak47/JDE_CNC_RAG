@@ -25,3 +25,5 @@ tqdm
 ollama
 llama-index
 requests
+
+openpyxl

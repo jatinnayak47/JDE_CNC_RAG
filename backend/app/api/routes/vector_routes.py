@@ -23,9 +23,8 @@ async def index_document(
 
     try:
 
-        print(
-            f"\nIndexing document: {document_id}"
-        )
+        print("\n========== INDEX START ==========")
+        print(f"Document ID: {document_id}")
 
         document = (
             IngestionService.parse_document(
@@ -33,9 +32,7 @@ async def index_document(
             )
         )
 
-        print(
-            "Document parsed successfully"
-        )
+        print("Document parsed successfully")
 
         chunks = document["chunks"]
 
@@ -48,10 +45,18 @@ async def index_document(
             for chunk in chunks
         ]
 
+        print(
+            "\nStarting embedding generation..."
+        )
+
         embeddings = (
             EmbeddingService.generate_embeddings(
                 texts
             )
+        )
+
+        print(
+            "Embedding generation completed."
         )
 
         print(
@@ -78,12 +83,20 @@ async def index_document(
             f"Vector dimension: {vector_size}"
         )
 
+        print(
+            "\nCreating collection..."
+        )
+
         QdrantService.create_collection(
             vector_size=vector_size
         )
 
         print(
-            "Collection ready"
+            "Collection ready."
+        )
+
+        print(
+            "\nInserting vectors..."
         )
 
         QdrantService.insert_chunks(
@@ -91,7 +104,11 @@ async def index_document(
         )
 
         print(
-            "Vectors inserted successfully"
+            "Vectors inserted successfully."
+        )
+
+        print(
+            "\n========== INDEX COMPLETE =========="
         )
 
         return {
